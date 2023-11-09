@@ -49,9 +49,6 @@ These instructions will get you a copy of the project up and running on your loc
 - `.env` file with your JWT secret key (`SECRET_KEY`).
 - `secret.json` file with your Firebase configuration.
 
-```
-Give examples
-```
 
 ### Installing Go Modules
 
