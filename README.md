@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
+ <img width=200px height=200px src="https://fingers-site-production.s3.eu-central-1.amazonaws.com/uploads/images/72Risoyey04MAd2A4ZQUZE5nl0otT4KY39ah2izD.webpg" alt="Project logo"></a>
 </p>
 
 <h3 align="center">Golang Todo List GDSC</h3>
