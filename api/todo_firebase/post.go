@@ -27,6 +27,7 @@ func PostFirebase(c *gin.Context) {
 	}
 
 	_, _, err := client.Collection("todos").Add(context.Background(), map[string]interface{}{
+		"userId":      payload["userId"],
 		"title":       newTodo.Title,
 		"description": newTodo.Description,
 		"startDate":   newTodo.StartDate,
@@ -35,4 +36,7 @@ func PostFirebase(c *gin.Context) {
 	if err != nil {
 		log.Fatalf("Error adding document: %v", err)
 	}
+
+	c.IndentedJSON(200, gin.H{"message": "success"})
+	return
 }
