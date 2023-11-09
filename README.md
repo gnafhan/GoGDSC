@@ -23,7 +23,6 @@
 - [Api Documentation](#api)
 - [Usage](#usage)
 - [Built Using](#built_using)
-- [Contributing](../CONTRIBUTING.md)
 - [Authors](#authors)
 - [License](#license)
 
@@ -71,7 +70,7 @@ go mod tidy
 
 ## 🔧 API Documentation <a name = "api"></a>
 
-###Temporary Array Storage Endpoints
+### Temporary Array Storage Endpoints
 
 - ```GET /```- Retrieve all todo items from temporary array storage.
 - ```GET /:id```- Retrieve a todo item by ID from temporary array storage.
@@ -79,7 +78,7 @@ go mod tidy
 - ```PUT /:id```- Update a todo item by ID in temporary array storage.
 - ```DELETE /:id```- Delete a todo item by ID from temporary array storage.
 
-###Firebase Endpoints
+### Firebase Endpoints
 
 - ```POST /register```- Register a user in Firebase and get a JWT token.
 - ```POST /login```- Login a user in Firebase and get a JWT token.
@@ -89,7 +88,7 @@ go mod tidy
 - ```PUT /firebase/:id``` - Update a todo item by ID for a user in Firebase (requires token).
 - ```DELETE /firebase/:id```- Delete a todo item by ID for a user from Firebase (requires token).
 
-###Authorization
+### Authorization
 - Request header with ```Authorization``` key
 
 ## 🎈 Usage <a name="usage"></a>
@@ -106,7 +105,7 @@ After installing the necessary prerequisites and setting up the environment vari
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@kgnafhan](https://github.com/gnafhan) - All work
+- [@gnafhan](https://github.com/gnafhan) - All work
 
 
 ## ⚖️ License <a name = "license"></a>
