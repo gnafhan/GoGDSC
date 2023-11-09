@@ -2,6 +2,7 @@ package main
 
 import (
 	"GoGDSC/api/todo"
+	todofirebase "GoGDSC/api/todo_firebase"
 	"GoGDSC/credential"
 	"GoGDSC/middleware"
 	"context"
@@ -39,9 +40,11 @@ func main() {
 	router := gin.Default()
 	router.GET("/", middleware.Validate, todo.GetTodos)
 	router.GET("/:id", middleware.Validate, todo.GetTodoById)
-	router.POST("/firebase", postFirebase)
+	router.GET("/firebase", todofirebase.GetFirebase)
+	router.POST("/firebase", todofirebase.PostFirebase)
 	router.POST("/", middleware.Validate, todo.PostTodos)
-	router.POST("/login", credential.Login)
+	router.POST("/login", credential.LoginFirebase)
+	router.POST("/register", credential.RegisterFirebase)
 	router.PUT("/:id", middleware.Validate, todo.EditTodo)
 	router.DELETE("/:id", middleware.Validate, todo.DeleteById)
 	err := router.Run("localhost:1234")
