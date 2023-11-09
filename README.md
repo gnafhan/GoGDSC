@@ -8,107 +8,106 @@
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
+[![GitHub Issues](https://img.shields.io/github/issues/gnafhan/GoGDSC.svg)](https://github.com/gnafhan/GoGDSC/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/gnafhan/GoGDSC.svg)](https://github.com/gnafhan/GoGDSC/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
 
 ---
 
-<p align="center"> Few lines describing your project.
-    <br> 
-</p>
-
 ## 📝 Table of Contents
 
 - [About](#about)
 - [Getting Started](#getting_started)
-- [Deployment](#deployment)
+- [Api Documentation](#api)
 - [Usage](#usage)
 - [Built Using](#built_using)
-- [TODO](../TODO.md)
 - [Contributing](../CONTRIBUTING.md)
 - [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
+- [License](#license)
 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+Welcome to our project! 🎉 This is a straightforward yet powerful Todo List application, meticulously crafted using the robust and efficient Golang language. 🚀
+
+Our project harnesses the power of Firebase, a versatile and scalable NoSQL cloud database, to store our data. This ensures that your todo items are safely stored and readily accessible, anytime and anywhere! 💾
+
+But, what about security, you ask? Fear not! We’ve got it covered. Our application uses JWT (JSON Web Tokens) for authentication. This means that your data is not just stored; it’s stored securely. 🔒
+
+And that’s not all! Our application is built on the Gin Framework, a web framework written in Golang. It’s known for its speed and efficiency, just like a well-mixed gin and tonic! 🍸
+
+So, why wait? Dive in and start organizing your life with our Todo List application. Happy tasking! 😊
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
+- Golang installed on your machine.
+- Firebase account.
+- `.env` file with your JWT secret key (`SECRET_KEY`).
+- `secret.json` file with your Firebase configuration.
 
 ```
 Give examples
 ```
 
-### Installing
+### Installing Go Modules
 
-A step by step series of examples that tell you how to get a development env running.
-
-Say what the step will be
+To install Go modules for this project, navigate to the project directory and run:
 
 ```
-Give the example
+go mod init
 ```
 
-And repeat
+and
 
 ```
-until finished
+go mod tidy
 ```
 
-End with an example of getting some data out of the system or using it for a little demo.
 
-## 🔧 Running the tests <a name = "tests"></a>
+## 🔧 API Documentation <a name = "api"></a>
 
-Explain how to run the automated tests for this system.
+###Temporary Array Storage Endpoints
 
-### Break down into end to end tests
+- ```GET /```- Retrieve all todo items from temporary array storage.
+- ```GET /:id```- Retrieve a todo item by ID from temporary array storage.
+- ```POST /```- Add a todo item to temporary array storage.
+- ```PUT /:id```- Update a todo item by ID in temporary array storage.
+- ```DELETE /:id```- Delete a todo item by ID from temporary array storage.
 
-Explain what these tests test and why
+###Firebase Endpoints
 
-```
-Give an example
-```
+- ```POST /register```- Register a user in Firebase and get a JWT token.
+- ```POST /login```- Login a user in Firebase and get a JWT token.
+- ```GET /firebase``` - Retrieve all todo items for a user from Firebase (requires token).
+- ```GET /firebase/:id```- Retrieve a todo item by ID for a user from Firebase (requires token).
+- ```POST /firebase```  Add a todo item for a user to Firebase (requires token).
+- ```PUT /firebase/:id``` - Update a todo item by ID for a user in Firebase (requires token).
+- ```DELETE /firebase/:id```- Delete a todo item by ID for a user from Firebase (requires token).
 
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+###Authorization
+- Request header with ```Authorization``` key
 
 ## 🎈 Usage <a name="usage"></a>
 
-Add notes about how to use the system.
-
-## 🚀 Deployment <a name = "deployment"></a>
-
-Add additional notes about how to deploy this on a live system.
+After installing the necessary prerequisites and setting up the environment variables, you can run the application using:
+```go run init.go```
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
+- [Firebase](https://firebase.google.com/) - Database
+- [Golang](https://go.dev/) - Programming Language
+- [Gin](https://gin-gonic.com/) - Server Framework
+
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
+- [@kgnafhan](https://github.com/gnafhan) - All work
 
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
 
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
+## ⚖️ License <a name = "license"></a>
+This project is licensed under the MIT License.
