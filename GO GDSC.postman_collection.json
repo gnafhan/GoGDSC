@@ -1,0 +1,248 @@
+{
+	"info": {
+		"_postman_id": "85554813-b615-44f1-aea1-025a26c70325",
+		"name": "GO GDSC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18996257"
+	},
+	"item": [
+		{
+			"name": "REGISTER USERS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"gnafhansas\",\r\n    \"firstName\":\"ghifari\",\r\n    \"lastName\":\"nafhan\",\r\n    \"password\":\"makanapa\",\r\n    \"email\":\"blalalal@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{GOGDSC}}register",
+					"host": [
+						"{{GOGDSC}}register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOGIN USERS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"gnafhansas\",\r\n    \"password\":\"makanapa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{GOGDSC}}login",
+					"host": [
+						"{{GOGDSC}}login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET DATA",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GET BY ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{GOGDSC}}9",
+					"host": [
+						"{{GOGDSC}}9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST GDSC",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Tidur\",\r\n    \"description\": \"tidur\",\r\n    \"status\": \"done\",\r\n    \"startDate\": \"2023-10-15T23:00:00+07:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{GOGDSC}}",
+					"host": [
+						"{{GOGDSC}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT BY ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"edi\",\r\n    \"description\":\"makanan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{GOGDSC}}9",
+					"host": [
+						"{{GOGDSC}}9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE BY ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{GOGDSC}}2",
+					"host": [
+						"{{GOGDSC}}2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET FIREBASE",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GET FIREBASE BY ID",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "POST FIREBASE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTk1Mjk1MzYsImlhdCI6MTY5OTUyNTkzNiwidXNlcm5hbWUiOiJuYWZoYW4ifQ.tfpSsvUzin9RDo70HNa-lo75ks0s8SQ28aFfTCMNym8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Tidur\",\r\n    \"description\": \"tidur\",\r\n    \"status\": \"done\",\r\n    \"startDate\": \"2023-10-15T23:00:00+07:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{GOGDSC}}firebase",
+					"host": [
+						"{{GOGDSC}}firebase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT FIREBASE",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJsYWxhbGFsQGdtYWlsLmNvbSIsImV4cCI6MTY5OTU0MTY0OCwiZmlyc3ROYW1lIjoiZ2hpZmFyaSIsImlhdCI6MTY5OTUzODA0OCwibGFzdE5hbWUiOiJuYWZoYW4iLCJ1c2VySWQiOiJSSWprRk5LNVVqcnpvTXdIaWF1WCIsInVzZXJuYW1lIjoiZ25hZmhhbnNhcyJ9.sOcoPQ4kwJbtzJWNl3Jh5J_SDzLdiQbqnlfLrR8DPvs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Tidurlah\",\r\n    \"description\": \"tidussaar\",\r\n    \"status\": \"done\",\r\n    \"startDate\": \"2023-10-15T23:00:00+07:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{GOGDSC}}firebase/9g0oFesfC7bSVxMxXYc2",
+					"host": [
+						"{{GOGDSC}}firebase"
+					],
+					"path": [
+						"9g0oFesfC7bSVxMxXYc2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE FIREBASE",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJsYWxhbGFsQGdtYWlsLmNvbSIsImV4cCI6MTY5OTU0MTY0OCwiZmlyc3ROYW1lIjoiZ2hpZmFyaSIsImlhdCI6MTY5OTUzODA0OCwibGFzdE5hbWUiOiJuYWZoYW4iLCJ1c2VySWQiOiJSSWprRk5LNVVqcnpvTXdIaWF1WCIsInVzZXJuYW1lIjoiZ25hZmhhbnNhcyJ9.sOcoPQ4kwJbtzJWNl3Jh5J_SDzLdiQbqnlfLrR8DPvs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{GOGDSC}}firebase/moo4jQ3dDnB5brjFGNSz",
+					"host": [
+						"{{GOGDSC}}firebase"
+					],
+					"path": [
+						"moo4jQ3dDnB5brjFGNSz"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "GOGDSC",
+			"value": "http://localhost:1234/"
+		},
+		{
+			"key": "Token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJsYWxhbGFsQGdtYWlsLmNvbSIsImV4cCI6MTY5OTU0MTY0OCwiZmlyc3ROYW1lIjoiZ2hpZmFyaSIsImlhdCI6MTY5OTUzODA0OCwibGFzdE5hbWUiOiJuYWZoYW4iLCJ1c2VySWQiOiJSSWprRk5LNVVqcnpvTXdIaWF1WCIsInVzZXJuYW1lIjoiZ25hZmhhbnNhcyJ9.sOcoPQ4kwJbtzJWNl3Jh5J_SDzLdiQbqnlfLrR8DPvs"
+		}
+	]
+}
