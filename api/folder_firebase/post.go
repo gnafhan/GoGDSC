@@ -1,4 +1,4 @@
-package todofirebase
+package folder_firebase
 
 import (
 	connect_firebase "GoGDSC/firebase"
@@ -11,9 +11,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func PostFirebase(c *gin.Context) {
-	var newTodo models.TodoFirebase
-	if err := c.BindJSON(&newTodo); err != nil {
+func PostFolderFirebase(c *gin.Context) {
+	var newFolder models.Folder
+	if err := c.BindJSON(&newFolder); err != nil {
 		return
 	}
 	client := connect_firebase.Connection()
@@ -26,14 +26,9 @@ func PostFirebase(c *gin.Context) {
 		return
 	}
 
-	_, _, err := client.Collection("todos").Add(context.Background(), map[string]interface{}{
-		"userId":      payload["userId"],
-		"title":       newTodo.Title,
-		"description": newTodo.Description,
-		"startDate":   newTodo.StartDate,
-		"status":      newTodo.Status,
-		"note":        newTodo.Note,
-		"folderId":    newTodo.FolderId,
+	_, _, err := client.Collection("folders").Add(context.Background(), map[string]interface{}{
+		"userId": payload["userId"],
+		"name":   newFolder.Name,
 	})
 	if err != nil {
 		log.Fatalf("Error adding document: %v", err)

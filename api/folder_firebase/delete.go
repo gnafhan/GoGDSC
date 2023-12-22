@@ -1,4 +1,4 @@
-package todofirebase
+package folder_firebase
 
 import (
 	connect_firebase "GoGDSC/firebase"
@@ -10,11 +10,10 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func EditFireBaseById(c *gin.Context) {
+func DeleteFolderFirebaseById(c *gin.Context) {
 	client := connect_firebase.Connection()
 	defer client.Close()
 
-	folderId := c.Param("folderId")
 	id := c.Param("id")
 
 	payload := middleware.DecodeToken(c)
@@ -24,19 +23,14 @@ func EditFireBaseById(c *gin.Context) {
 		return
 	}
 
-	docs, err := client.Collection("todos").Where("userId", "==", payload["userId"]).Where("folderId", "==", folderId).Documents(context.Background()).GetAll()
+	docs, err := client.Collection("folders").Where("userId", "==", payload["userId"]).Documents(context.Background()).GetAll()
 	if err != nil {
 		log.Fatalf("Failed to get documents: %v", err)
 	}
 
 	for _, doc := range docs {
 		if id == doc.Ref.ID {
-			var newTodo map[string]interface{}
-			if err := c.BindJSON(&newTodo); err != nil {
-				return
-			}
-			newTodo["userId"] = payload["userId"]
-			_, err := client.Collection("todos").Doc(id).Set(context.Background(), newTodo)
+			_, err := client.Collection("folders").Doc(id).Delete(context.Background())
 			if err != nil {
 				log.Fatalf("Failed adding document: %v", err)
 			}

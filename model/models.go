@@ -10,11 +10,19 @@ type Todo struct {
 	StartDate   time.Time `json:"startDate"`
 }
 
+type Folder struct {
+	Id     string `json:"id"`
+	UserId string `json:"userId"`
+	Name   string `json:"name"`
+}
+
 type TodoFirebase struct {
 	Id          string    `json:"id"`
 	UserId      string    `json:"userId"`
+	FolderId    string    `json:"folderId"`
 	Title       string    `json:"title"`
 	Description string    `json:"description"`
+	Note        string    `json:"note"`
 	Status      string    `json:"status"`
 	StartDate   time.Time `json:"startDate"`
 }

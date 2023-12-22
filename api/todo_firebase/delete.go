@@ -14,6 +14,7 @@ func DeleteFirebaseById(c *gin.Context) {
 	client := connect_firebase.Connection()
 	defer client.Close()
 
+	folderId := c.Param("folderId")
 	id := c.Param("id")
 
 	payload := middleware.DecodeToken(c)
@@ -23,7 +24,7 @@ func DeleteFirebaseById(c *gin.Context) {
 		return
 	}
 
-	docs, err := client.Collection("todos").Where("userId", "==", payload["userId"]).Documents(context.Background()).GetAll()
+	docs, err := client.Collection("todos").Where("userId", "==", payload["userId"]).Where("folderId", "==", folderId).Documents(context.Background()).GetAll()
 	if err != nil {
 		log.Fatalf("Failed to get documents: %v", err)
 	}
@@ -36,10 +37,8 @@ func DeleteFirebaseById(c *gin.Context) {
 			}
 			c.IndentedJSON(200, gin.H{"message": "success"})
 			return
-		} else {
-			c.IndentedJSON(400, gin.H{"message": "id not found"})
-			return
 		}
 	}
+	c.IndentedJSON(400, gin.H{"message": "id not found"})
 	return
 }

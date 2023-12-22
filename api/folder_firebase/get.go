@@ -1,4 +1,4 @@
-package todofirebase
+package folder_firebase
 
 import (
 	connect_firebase "GoGDSC/firebase"
@@ -10,21 +10,20 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func GetFirebase(c *gin.Context) {
+func GetFolderFirebase(c *gin.Context) {
 	client := connect_firebase.Connection()
 	defer client.Close()
 
 	datas := []map[string]interface{}{}
 
-	folderId := c.Param("folderId")
-
+	fmt.Println(c)
 	payload := middleware.DecodeToken(c)
 	if payload == nil {
 		c.IndentedJSON(400, gin.H{"message": "Payload is nil"})
 		return
 	}
 
-	docs, err := client.Collection("todos").Where("userId", "==", payload["userId"]).Where("folderId", "==", folderId).Documents(context.Background()).GetAll()
+	docs, err := client.Collection("folders").Where("userId", "==", payload["userId"]).Documents(context.Background()).GetAll()
 	if err != nil {
 		log.Fatalf("Failed to get documents: %v", err)
 	}
@@ -45,21 +44,19 @@ func GetFirebase(c *gin.Context) {
 
 }
 
-func GetFirebaseById(c *gin.Context) {
+func GetFolderFirebaseById(c *gin.Context) {
 	client := connect_firebase.Connection()
 	defer client.Close()
 
-	folderId := c.Param("folderId")
 	id := c.Param("id")
 
 	payload := middleware.DecodeToken(c)
 	if payload == nil {
-		fmt.Println("Payload is nil")
 		c.IndentedJSON(400, gin.H{"message": "Payload is nil"})
 		return
 	}
 
-	docs, err := client.Collection("todos").Where("userId", "==", payload["userId"]).Where("folderId", "==", folderId).Documents(context.Background()).GetAll()
+	docs, err := client.Collection("folders").Where("userId", "==", payload["userId"]).Documents(context.Background()).GetAll()
 	if err != nil {
 		log.Fatalf("Failed to get documents: %v", err)
 	}
