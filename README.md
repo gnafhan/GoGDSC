@@ -75,8 +75,7 @@ go mod tidy
 - ```PUT /:id```- Update a todo item by ID in temporary array storage.
 - ```DELETE /:id```- Delete a todo item by ID from temporary array storage.
 
-### Firebase Endpoints
-
+### Firebase Todo
 - ```POST /register```- Register a user in Firebase and get a JWT token.
 - ```POST /login```- Login a user in Firebase and get a JWT token.
 - ```GET /firebase/:folderid``` - Retrieve all todo items for a user from Firebase (requires token).
@@ -84,6 +83,8 @@ go mod tidy
 - ```POST /firebase/:folderid```  Add a todo item for a user to Firebase (requires token).
 - ```PUT /firebase/:folderid/:id``` - Update a todo item by ID for a user in Firebase (requires token).
 - ```DELETE /firebase/:folderid/:id```- Delete a todo item by ID for a user from Firebase (requires token).
+
+- ### Firebase Folder
 - ```GET /firebase/folder/``` - Retrieve all folder for a user from Firebase (requires token).
 - ```GET /firebase/folder/:id```- Retrieve a folder by ID for a user from Firebase (requires token).
 - ```POST /firebase/folder/```  Add a folder for a user to Firebase (requires token).
