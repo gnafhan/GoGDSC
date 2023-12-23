@@ -79,11 +79,16 @@ go mod tidy
 
 - ```POST /register```- Register a user in Firebase and get a JWT token.
 - ```POST /login```- Login a user in Firebase and get a JWT token.
-- ```GET /firebase``` - Retrieve all todo items for a user from Firebase (requires token).
-- ```GET /firebase/:id```- Retrieve a todo item by ID for a user from Firebase (requires token).
-- ```POST /firebase```  Add a todo item for a user to Firebase (requires token).
-- ```PUT /firebase/:id``` - Update a todo item by ID for a user in Firebase (requires token).
-- ```DELETE /firebase/:id```- Delete a todo item by ID for a user from Firebase (requires token).
+- ```GET /firebase/:folderid``` - Retrieve all todo items for a user from Firebase (requires token).
+- ```GET /firebase/:folderid/:id```- Retrieve a todo item by ID for a user from Firebase (requires token).
+- ```POST /firebase/:folderid```  Add a todo item for a user to Firebase (requires token).
+- ```PUT /firebase/:folderid/:id``` - Update a todo item by ID for a user in Firebase (requires token).
+- ```DELETE /firebase/:folderid/:id```- Delete a todo item by ID for a user from Firebase (requires token).
+- ```GET /firebase/folder/``` - Retrieve all folder for a user from Firebase (requires token).
+- ```GET /firebase/folder/:id```- Retrieve a folder by ID for a user from Firebase (requires token).
+- ```POST /firebase/folder/```  Add a folder for a user to Firebase (requires token).
+- ```DELETE /firebase/folder/:id```- Delete a folder by ID for a user from Firebase (requires token).
+
 
 ### Authorization
 - Request header with ```Authorization``` key
