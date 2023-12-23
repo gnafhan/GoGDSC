@@ -112,3 +112,6 @@ After installing the necessary prerequisites and setting up the environment vari
 
 ## ⚖️ License <a name = "license"></a>
 This project is licensed under the MIT [License](https://github.com/gnafhan/GoGDSC/blob/main/LICENSE).
+
+## Deployment
+This project has been deployed on Heroku. Contact Dev for Testing
