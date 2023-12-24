@@ -36,7 +36,7 @@ func main() {
 	router.GET("/firebase/folder/:id", middleware.Validate, folder_firebase.GetFolderFirebaseById)
 	router.DELETE("/firebase/folder/:id", middleware.Validate, folder_firebase.DeleteFolderFirebaseById)
 	router.NoRoute(func(c *gin.Context) {
-		c.JSON(404, gin.H{"message": "Route not found"})
+		c.JSON(404, gin.H{"message": "Route not founds"})
 	})
 	err := router.Run(":1234")
 	if err != nil {
